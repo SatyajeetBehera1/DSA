@@ -73,6 +73,24 @@ int parenthesisMatch(char * exp){
             }
             pop(sp);
         }
+        if(exp[i]=='{'){
+            push(sp, '{');
+        }
+        else if(exp[i]=='}'){
+            if(isEmpty(sp)){
+                return 0;
+            }
+            pop(sp);
+        }
+        if(exp[i]=='['){
+            push(sp, '[');
+        }
+        else if(exp[i]==']'){
+            if(isEmpty(sp)){
+                return 0;
+            }
+            pop(sp);
+        }
     }
 
     if(isEmpty(sp)){
@@ -85,7 +103,7 @@ int parenthesisMatch(char * exp){
 }
 int main()
 {
-    char * exp = "((8)(*--$$9))";
+    char * exp = "((8)[{}(*--$$9))";
     // Check if stack is empty
     if(parenthesisMatch(exp)){
         printf("The parenthesis is matching");
