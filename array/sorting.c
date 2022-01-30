@@ -2,7 +2,7 @@
 void main ()    
 {    
     int i, j, temp, l;     
-    int a[100];// = { 10, 9, 7, 101, 23, 44, 12, 78, 34, 23};     
+    int a[100];
     printf("Enter the size of array\n");
     scanf("%d",&l);
     printf("Enter the element of array\n");
